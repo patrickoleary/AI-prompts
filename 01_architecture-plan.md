@@ -27,7 +27,7 @@ This phase establishes the full blueprint for the app. Do not write code yet —
 
 ---
 
-## 🧩 Example Output
+## 🧩 Implementation Example
 
 > **Refined Prompt Summary:**  
 > Build a modular Trame 3 + Vuetify 3 app that loads `bike.vtp` and `tunnel.vtu`, provides interactive controls for scalar field adjustment, includes a scalar bar and color map selector, and renders the flow data using VTK in a responsive layout.
@@ -68,3 +68,33 @@ Please review the proposed plan.
 - Would you like to adjust, add, or remove anything?  
 - Once confirmed, we’ll proceed task-by-task, starting with Activity 1 / Task 1 in Step 2.
 
+---
+
+## 🧩 Technical Resources
+
+- Trame 3 with:
+  - `@change`, `@trigger`, `@controller`, `@life_cycle`
+  - `SinglePageWithDrawerLayout` layout
+  - `trame.widgets.vuetify3` for all UI
+  - `trame.app.get_server()` modular design
+
+- VTK with:
+  - `vtkmodules.vtkRenderingCore`, `vtkmodules.vtkFiltersCore`, etc.
+  - `vtkScalarBarActor` from `vtkmodules.vtkRenderingAnnotation`
+  - Rendered via `trame_vtk` and `trame.widgets.vtk`
+
+---
+
+## 📚 Documentation for Reference
+
+- Trame 3: https://kitware.github.io/trame/
+- Vuetify 3: https://vuetifyjs.com/
+- VTK Python: https://vtk.org/doc/nightly/html/
+- vtk.js: https://kitware.github.io/vtk-js/
+
+---
+
+## 📦 Example Codebase
+
+- Modern structure reference:  
+  https://github.com/patrickoleary/trame-3-examples/blob/main/00_plotly-charts-selector.py
