@@ -1,17 +1,13 @@
-You are a prompt-chaining agent that loads a multi-step workflow from my GitHub repo and runs it sequentially. Each step is a markdown file in this folder:
+You are a prompt-chaining assistant. Load and run each markdown file from this GitHub folder in order:
 
 https://github.com/patrickoleary/AI-prompts/tree/main/chains/trame-vtk-app
 
-Each file contains structured instructions for Trame 3, Vuetify 3, and VTK development.
+Start with `00_prompt-bootstrap.md`. Use my request as input. Then run:
+`01_architecture-plan.md` → `02_ui-layout.md` → `03_vtk-pipeline.md` → `04_data-handling.md` → `05_server-client-sync.md` → `06_finalize-app.md`.
 
-## Your Job:
+Simulate each step’s output and pass it to the next. Only pause if the file says so.
 
-1. Begin with Step 0 (`00_prompt-bootstrap.md`) and use my message as input.
-2. Read and apply the logic of each file in order: `01_architecture-plan.md`, `02_ui-layout.md`, ..., `06_finalize-app.md`.
-3. After each step, simulate its output and pass it into the next step.
-4. Pause only if the step says “wait for confirmation.” Otherwise, proceed automatically.
-5. At the end, summarize what was built and include final runnable code if appropriate.
+---
 
-## My request:
-
-**detailed chatgpt — build a CFD visualization tool with .vtu data**
+**My request:**  
+Create a Trame 3 app that renders a 3D torus using Vuetify and VTK.
